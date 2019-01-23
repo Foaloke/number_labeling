@@ -12,10 +12,19 @@ public class Application {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(Config.class);
 
         if(args.length == 0){
-            System.out.println("pass a number as parameter to the application to have its reading");
+            System.out.println("Pass a number as parameter to the application to have its reading");
             System.exit(0);
         }
-        System.out.println(ctx.getBean(NumberLabeler.class).label(args[0]));
+
+        System.out.println();
+        System.out.println();
+        try {
+            System.out.println(args[0] + " => " + ctx.getBean(NumberLabeler.class).label(args[0]));
+        } catch (Exception e) {
+            System.out.println("Input not supported ("+args[0]+")");
+        }
+        System.out.println();
+        System.out.println();
     }
 
 }
