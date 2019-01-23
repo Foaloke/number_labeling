@@ -1,0 +1,70 @@
+<rules>
+
+    <rule ge="0" lt="10">
+        <readings>
+            <reading pattern="0*">zero</reading>
+            <reading pattern="0*1">one</reading>
+            <reading pattern="0*2">two</reading>
+            <reading pattern="0*3">three</reading>
+            <reading pattern="0*4">four</reading>
+            <reading pattern="0*5">five</reading>
+            <reading pattern="0*6">six</reading>
+            <reading pattern="0*7">seven</reading>
+            <reading pattern="0*8">eight</reading>
+            <reading pattern="0*9">nine</reading>
+        </readings>
+    </rule>
+
+    <rule ge="10" lt="20">
+        <readings>
+            <reading pattern="0*10">ten</reading>
+            <reading pattern="0*11">eleven</reading>
+            <reading pattern="0*12">twelve</reading>
+            <reading pattern="0*13">thirteen</reading>
+            <reading pattern="0*15">fifteen</reading>
+            <reading pattern="0*18">eighteen</reading>
+            <reading pattern="0*1([4|6|7|9])">{|1|}teen</reading>
+        </readings>
+    </rule>
+
+    <rule ge="20" lt="100">
+        <readings>
+            <reading pattern="0*20">twenty</reading>
+            <reading pattern="0*30">thirty</reading>
+            <reading pattern="0*40">forty</reading>
+            <reading pattern="0*50">fifty</reading>
+            <reading pattern="0*60">sixty</reading>
+            <reading pattern="0*70">seventy</reading>
+            <reading pattern="0*80">eighty</reading>
+            <reading pattern="0*90">ninety</reading>
+            <reading pattern="0*([1-9])([1-9])">{|1|0}-{|2|}</reading>
+        </readings>
+    </rule>
+
+    <rule ge="100" lt="1000">
+        <readings>
+            <reading pattern="0*([1-9])00">{|1|} hundred</reading>
+            <reading pattern="0*([1-9])([0-9]{2})">{|1|} hundred and {|2|}</reading>
+        </readings>
+    </rule>
+
+    <rule ge="1000" lt="1000000">
+        <readings>
+            <reading pattern="0*([1-9][0-9]{0,2})000">{|1|} thousand</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})0([0-9]{2})">{|1|} thousand and {|2|}</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})([1-9]{1}00)">{|1|} thousand and {|2|}</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})([0-9]{3})">{|1|} thousand, {|2|}</reading>
+        </readings>
+    </rule>
+
+    <rule ge="1000000" lt="1000000000">
+        <readings>
+            <reading pattern="0*([1-9][0-9]{0,2})000000">{|1|} million</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})0000([0-9]{2})">{|1|} million and {|2|}</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})000([0-9]{1}00)">{|1|} million and {|2|}</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})00([0-9]{1}000)">{|1|} million and {|2|}</reading>
+            <reading pattern="0*([1-9][0-9]{0,2})([0-9]{6})">{|1|} million, {|2|}</reading>
+        </readings>
+    </rule>
+
+</rules>
